@@ -256,13 +256,13 @@ const showProducts = (products) => {
     // const detail= Singlepd(product.id);
   }
 };
-
+// fetch products
 const Singlepd = (id) => {
   fetch(`https://fakestoreapi.com/products/${id}`)
     .then((res) => res.json())
     .then((json) => show(json));
 };
-
+// set item to modal
 const show = (item) => {
   let details = document.getElementById("details");
   details.innerHTML = `
@@ -271,7 +271,6 @@ const show = (item) => {
     <p>Average rating: <span style="color: blue; font-weight: bold">${item.rating.rate}</span></p>
     <p>Rating count: ${item.rating.count}</p>
     <p>Description: ${item.description}</p>
-
 `;
 };
 
